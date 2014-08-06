@@ -10,7 +10,6 @@ class HistoryFieldsMixin(models.Model):
     '''
     created_at = models.DateTimeField(auto_now_add=True)
     modified_at = models.DateTimeField(auto_now=True)
-    deleted_on = models.DateTimeField(blank=True, null=True)
     changed_by = models.ForeignKey('auth.User', null=True, blank=True)
 
     # Used by django-simple-history
