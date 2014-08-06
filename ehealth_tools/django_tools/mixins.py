@@ -1,6 +1,13 @@
 from django.db import models
 
 class HistoryFieldsMixin(models.Model):
+    '''
+    Adds common history fields to a model. changed_by field you need to populate yourself.
+    Usage: 
+    from ehealth_tools.django_tools.mixins import HistoryFieldsMixin
+    class Area(HistoryFieldsMixin, models.Model):
+        pass
+    '''
     created_at = models.DateTimeField(auto_now_add=True)
     modified_at = models.DateTimeField(auto_now=True)
     deleted_on = models.DateTimeField(blank=True, null=True)
